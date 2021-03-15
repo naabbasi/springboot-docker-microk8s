@@ -23,9 +23,21 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Echo version from file
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
         run: |
-          echo $(pwd)      
           ls
-          echo $(tail ./build-docker-image.sh)
+      
+      - name: Read version file
+        id: version
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: version
+          
+      - name: Echo version from file
+        run: echo ${{ steps.version.outputs.content }}
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it     
+        
+      - name: Create docker build and tag
+        run: ./build-docker-image.sh ${{ steps.version.outputs.content }}
