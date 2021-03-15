@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Run a one-line script
-        run: sudo apt update -y && sudo apt upgrade -y && sudo apt install docker.io -y
+        run: ll && sudo apt install docker.io -y
       - name: Read version file
         id: version
         uses: juliangruber/read-file-action@v1
