@@ -26,4 +26,4 @@ jobs:
         run: |
           echo $(pwd)      
           ls
-          echo $(pwd)
+          echo $(tail version)
