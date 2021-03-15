@@ -21,9 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - name: Run a one-line script
-        run: sudo apt install docker.io -y
+    steps:      
       - name: Read version file
         id: version
         uses: juliangruber/read-file-action@v1
