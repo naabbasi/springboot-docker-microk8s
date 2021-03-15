@@ -26,7 +26,7 @@ jobs:
         id: version
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./springboot-docker-microk8s/version
+          path: version
       - name: Echo version from file
         run: echo ${{ steps.version.outputs.content }}
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
