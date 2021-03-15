@@ -23,4 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Echo version from file
-        run: echo $(pwd)      
+        run: |
+          echo $(pwd)      
+          ls
+          echo $(pwd)
