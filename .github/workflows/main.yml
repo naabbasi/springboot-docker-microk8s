@@ -26,4 +26,4 @@ jobs:
         run: |
           echo $(pwd)      
           ls
-          echo $(tail ./version)
+          echo $(tail ./build-docker-image.sh)
