@@ -22,12 +22,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Read package.json
+      - name: Read version file to create a docker image with specified version
         id: package
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./package.json
-      - name: Echo package.json
+          path: ./version
+      - name: Echo version
         run: echo ${{ steps.package.outputs.content }}
         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
